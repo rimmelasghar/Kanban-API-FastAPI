@@ -1,16 +1,20 @@
 from datetime import datetime
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Float, String, ForeignKey, Text, DateTime, Integer
-from database import Base
+from src.database import Base
+
 
 class Task(Base):
     __tablename__ = "task"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     createdDate = Column(DateTime, default=datetime.now)
+    dueDate = Column(DateTime, default=datetime.now)
     title = Column(String(50))
     description = Column(Text)
     status = Column(String(50))
     owner_id = Column(Integer, ForeignKey("user.id", ondelete="CASCADE"))
+    project_id = Column(Integer, ForeignKey("project.id", ondelete="CASCADE"))
 
-    owner = relationship("User", back_populates="tasks")
+    owner = relationship("User", back_populates="tasks", primaryjoin="Task.owner_id == User.id")
+    project = relationship("Project", back_populates="tasks", primaryjoin="Task.project_id == Project.id")
