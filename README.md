@@ -63,4 +63,4 @@ fastapi-project
 ```
 ## ERD Diagram:
 
-<img src="https://github.com/rimmelasghar/Kanban-API-FastAPI/blob/main/screenshots/db_diagram.jpg" alt="creating a service on cloud run" width="1000" height="400">
+<img src="https://github.com/rimmelasghar/Kanban-API-FastAPI/blob/main/screenshots/db_diagram.jpg" alt="creating a service on cloud run" width="1000" height="600">
