@@ -1,6 +1,6 @@
 # KanBan API
 
-project structure
+## Project structure:
 ```
 fastapi-project
 ├── alembic/
@@ -15,16 +15,28 @@ fastapi-project
 │   │   ├── exceptions.py
 │   │   ├── service.py
 │   │   └── utils.py
-│   ├── aws
-│   │   ├── client.py  # client model for external service communication
-│   │   ├── schemas.py
-│   │   ├── config.py
+│   ├── project
+│   │   ├── router.py
+│   │   ├── schemas.py  # pydantic models
+│   │   ├── models.py  # db models
+│   │   ├── dependencies.py
+│   │   ├── config.py  # local configs
 │   │   ├── constants.py
 │   │   ├── exceptions.py
+│   │   ├── service.py
 │   │   └── utils.py
-│   └── posts
+│   ├── tasks
 │   │   ├── router.py
-│   │   ├── schemas.py
+│   │   ├── schemas.py  # pydantic models
+│   │   ├── models.py  # db models
+│   │   ├── dependencies.py
+│   │   ├── config.py  # local configs
+│   │   ├── constants.py
+│   │   ├── exceptions.py
+│   │   ├── service.py
+│   │   └── utils.py
+│   └── admin
+│   │   ├── router.py
 │   │   ├── models.py
 │   │   ├── dependencies.py
 │   │   ├── constants.py
@@ -38,17 +50,17 @@ fastapi-project
 │   ├── database.py  # db connection related stuff
 │   └── main.py
 ├── tests/
-│   ├── auth
-│   ├── aws
-│   └── posts
-├── templates/
-│   └── index.html
+│   ├── test_task_app.py
 ├── requirements
 │   ├── base.txt
 │   ├── dev.txt
 │   └── prod.txt
 ├── .env
 ├── .gitignore
-├── logging.ini
+├── Dockerfile
+├── docker-compose.yaml
 └── alembic.ini
 ```
+## ERD Diagram:
+
+<img src="https://github.com/rimmelasghar/Kanban-API-FastAPI/blob/main/screenshots/db_diagram.jpg" alt="creating a service on cloud run" width="1000" height="400">
